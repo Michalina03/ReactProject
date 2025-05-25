@@ -27,7 +27,7 @@ function Mobs() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="page__container">
       {mobs.map((mob) => (
         <Mob key={mob.identifier} {...mob} />
       ))}

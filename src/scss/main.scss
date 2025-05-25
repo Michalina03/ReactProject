@@ -1,10 +1,11 @@
 @import "./reset";
-@import "./star";
+@import "./body";
 @import "./variables";
 @import "./mixins";
-@import "./body";
+
 // ----------------------------------
 @import "./components/header";
 @import "./components/footer";
 
 @import "./pages/podstrony";
+@import "./pages/home";

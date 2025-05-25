@@ -26,7 +26,7 @@ function Blocks() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="page__container">
       {blocks.map((block) => (
         <Block key={block.identifier} {...block} />
       ))}

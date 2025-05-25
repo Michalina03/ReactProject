@@ -1,15 +1,16 @@
 import React from 'react';
 
-function Block({ identifier, name, hardness, blast_resistance, flammable, inventory_image }) {
+function Block({ identifier, name, hardness, blast_resistance, flammable, render_image }) {
   return (
-    <div className="card">
-      <h3>{name}</h3>
-      <p><strong>ID:</strong> {identifier}</p>
-      <p><strong>Hardness:</strong> {hardness}</p>
-      <p><strong>Blast Resistance:</strong> {blast_resistance}</p>
-      <p><strong>Flammable:</strong> {flammable ? 'Yes' : 'No'}</p>
-      <img src={inventory_image} alt={name} />
-    </div>
+    <div className="block">
+  <h3 className="block__title">{name}</h3>
+  <p className="block__field"><strong>ID:</strong> {identifier}</p>
+  <p className="block__field"><strong>Hardness:</strong> {hardness}</p>
+  <p className="block__field"><strong>Blast Resistance:</strong> {blast_resistance}</p>
+  <p className="block__field"><strong>Flammable:</strong> {flammable ? 'Yes' : 'No'}</p>
+  <img className="block__image" src={render_image} alt={name} />
+</div>
+
   );
 }
 

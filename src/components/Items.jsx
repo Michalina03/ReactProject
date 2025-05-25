@@ -27,7 +27,7 @@ function Items() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="page__container">
       {items.map((item) => (
         <Item key={item.identifier} {...item} />
       ))}

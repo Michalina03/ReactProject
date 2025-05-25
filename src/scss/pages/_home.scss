@@ -1,0 +1,92 @@
+@import '../variables';
+@import '../mixins';
+
+.home {
+  font-family: $font-main;
+  background-color: $color-white;
+  color: $color-gray;
+  padding: $spacing-xl 1rem;
+
+  &__intro {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    text-align: center;
+
+    & .home__title {
+      font-size: $font-size-large;
+      color: $color-green;
+      margin-bottom: $spacing-md;
+      letter-spacing: $letter-spacing-wide;
+    }
+
+    & .home__description {
+      font-size: $font-size-base;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+      color: darken($color-gray, 10%);
+    }
+  }
+
+  &__section {
+    max-width: 900px;
+    margin: 2rem auto;
+    border-radius: $radius-md;
+    background-color: $color-gwhite;
+    padding: $spacing-lg;
+    box-shadow: $card-box-shadow;
+    transition: $transition-default;
+
+    &:hover {
+      box-shadow: $card-box-shadow-hover;
+      transform: translateY(-3px);
+    }
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      gap: $spacing-lg;
+
+      @media (max-width: $breakpoint-sm) {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    &__images {
+      display: flex;
+      gap: $spacing-md;
+      flex-wrap: wrap;
+      max-width: 320px;
+      justify-content: center;
+
+      .home__image {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: $radius-md;
+        box-shadow: $card-box-shadow;
+        transition: $transition-default;
+
+        &:hover {
+          box-shadow: $card-box-shadow-hover;
+          transform: scale(1.1);
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__text {
+      flex: 1;
+      font-size: $font-size-card-text;
+      line-height: 1.5;
+      color: $color-gray;
+      max-width: 450px;
+
+      @media (max-width: $breakpoint-sm) {
+        max-width: 100%;
+        margin-top: $spacing-md;
+      }
+    }
+  }
+}

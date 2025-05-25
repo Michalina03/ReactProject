@@ -1,1 +1,63 @@
+@import '../variables';
+@import '../mixins';
 
+.page__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-lg;
+  justify-content: center;
+  padding: $spacing-xl;
+}
+
+.item,
+.block,
+.mob {
+  background-color: $card-background;
+  border: $border-width-thin solid $color-gray;
+  border-radius: $card-border-radius;
+  box-shadow: $card-box-shadow;
+  max-width: $card-max-width;
+  width: 100%;
+  padding: $card-padding;
+  font-family: $font-main;
+  transition: $transition-default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  min-height: 380px; 
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $card-box-shadow-hover;
+  }
+
+  &__title {
+    font-size: $font-size-card-title;
+    margin-bottom: $spacing-sm;
+    color: $color-green;
+    text-align: center;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+
+  &__field {
+    font-size: $font-size-card-text;
+    margin-bottom: $spacing-xs;
+    color: $color-gray;
+
+    strong {
+      color: $color-pink;
+    }
+  }
+
+  &__image {
+    margin-top: auto;
+    width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+  }
+
+  @include responsive-card;
+}
