@@ -1,8 +1,10 @@
-$color-green: #48b518; 
-$color-pink: #ffb7d5; 
+$color-green: #48b518;
+$color-pink: #ffb7d5;
 $color-white: #ffffff;
 $color-gwhite: #e0ffe0;
 $color-gray: rgb(140, 140, 141);
+$section-bg-darkened: #ffcceb;
+
 $font-main: 'Minecraftia', sans-serif;
 
 $breakpoint-sm: 768px;
@@ -29,7 +31,7 @@ $transition-default: all 0.2s ease;
 
 $card-background: $color-gwhite;
 $card-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-$card-box-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.2);
+$card-box-shadow-hover: 0 6px 15px rgba(0, 0, 0, 0.25);
 $card-padding: $spacing-lg;
 $card-max-width: 300px;
 $card-border-radius: 10px;
@@ -38,4 +40,26 @@ $image-max-height: 180px;
 $image-max-width: 80px;
 $image-rendering: pixelated;
 
+$color-frame: #000000;
+$border-pixel: 4px solid $color-frame;
+$pixel-border-light: 2px solid #ccc;
+
 $radius-md: 0.5rem;
+
+$text-bg-color: rgba(0, 0, 0, 0.6);
+$text-color-light: #fefefe;
+$text-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+$text-border-radius: 12px;
+$text-color-dark: #222;
+
+$intro-bg: linear-gradient(135deg, #48b518 0%, #a1f18a 100%);
+$section-padding: 6rem 2rem;
+
+$image-large: clamp(300px, 40vw, 500px);
+
+$section-divider-color: rgba(0, 0, 0, 0.08);
+$section-bg-alt: #f8fff8;
+
+$section-title-size: 2rem;
+$section-text-color: $text-color-dark;
+$section-text-bg: $text-bg-color;

@@ -36,6 +36,16 @@
 @mixin fade-in {
   animation: fadeIn 1s ease-in-out;
 }
+@mixin section-layout($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-xl;
+  padding: $section-padding;
+
+  @include responsive-col;
+}
 
 @keyframes fadeIn {
   from {
@@ -46,4 +56,8 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+@mixin pixel-border {
+  border: $border-pixel;
+  image-rendering: pixelated;
 }

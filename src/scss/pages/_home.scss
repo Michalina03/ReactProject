@@ -3,90 +3,83 @@
 
 .home {
   font-family: $font-main;
-  background-color: $color-white;
-  color: $color-gray;
-  padding: $spacing-xl 1rem;
 
-  &__intro {
-    max-width: 700px;
-    margin: 0 auto 4rem;
-    text-align: center;
+  &__section {
+    @include section-layout;
+    background-color: $color-white;
+    border-top: 1px solid $section-divider-color;
+    border-bottom: 1px solid $section-divider-color;
 
-    & .home__title {
-      font-size: $font-size-large;
-      color: $color-green;
-      margin-bottom: $spacing-md;
-      letter-spacing: $letter-spacing-wide;
+    &:nth-child(even) {
+      background-color: $section-bg-darkened; 
     }
 
-    & .home__description {
-      font-size: $font-size-base;
-      line-height: 1.6;
-      max-width: 600px;
-      margin: 0 auto;
-      color: darken($color-gray, 10%);
+    &--intro {
+      background: $intro-bg;
+      color: $text-color-light;
+      text-align: center;
+
+      h1 {
+        font-size: $section-title-size;
+        margin-bottom: $spacing-md;
+        @include fade-in;
+      }
+
+      p {
+        font-size: $font-size-base;
+        max-width: 700px;
+        margin: 0 auto;
+        background-color: $section-text-bg;
+        padding: $spacing-sm;
+        border-radius: $text-border-radius;
+        box-shadow: $text-box-shadow;
+        @include responsive-text;
+      }
+    }
+
+    &--pink {
+      background-color: $color-gwhite; 
     }
   }
 
-  &__section {
-    max-width: 900px;
-    margin: 2rem auto;
-    border-radius: $radius-md;
-    background-color: $color-gwhite;
-    padding: $spacing-lg;
-    box-shadow: $card-box-shadow;
-    transition: $transition-default;
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
 
-    &:hover {
-      box-shadow: $card-box-shadow-hover;
-      transform: translateY(-3px);
-    }
+    @include responsive-col;
+  }
 
-    &__wrapper {
-      display: flex;
-      align-items: center;
-      gap: $spacing-lg;
+  &__image {
+    max-width: $image-large;
+    max-height: 300px;
+    object-fit: cover;
+    @include pixel-border;
+    @include responsive-card;
+  }
 
-      @media (max-width: $breakpoint-sm) {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
+  &__textBox {
+    background-color: $section-text-bg;
+    color: $section-text-color;
+    padding: $spacing-md;
+    border-radius: $text-border-radius;
+    box-shadow: $text-box-shadow;
+    font-size: $font-size-base;
+    line-height: 1.4;
+    max-width: 600px;
+    @include responsive-text;
+  }
 
-    &__images {
-      display: flex;
-      gap: $spacing-md;
-      flex-wrap: wrap;
-      max-width: 320px;
-      justify-content: center;
+  &__title {
+    font-size: $font-size-large;
+    margin-bottom: $spacing-sm;
+    letter-spacing: $letter-spacing-wide;
+  }
 
-      .home__image {
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-        border-radius: $radius-md;
-        box-shadow: $card-box-shadow;
-        transition: $transition-default;
-
-        &:hover {
-          box-shadow: $card-box-shadow-hover;
-          transform: scale(1.1);
-          cursor: pointer;
-        }
-      }
-    }
-
-    &__text {
-      flex: 1;
-      font-size: $font-size-card-text;
-      line-height: 1.5;
-      color: $color-gray;
-      max-width: 450px;
-
-      @media (max-width: $breakpoint-sm) {
-        max-width: 100%;
-        margin-top: $spacing-md;
-      }
-    }
+  &__text {
+    font-size: $font-size-base;
   }
 }
